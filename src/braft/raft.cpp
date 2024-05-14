@@ -206,6 +206,14 @@ void Node::snapshot(Closure* done, int64_t self_snapshot_index) {
     _impl->snapshot(done, self_snapshot_index);
 }
 
+void Node::set_self_playback_point(int64_t self_playback_point) {
+    _impl->set_self_playback_point(self_playback_point);
+}
+
+uint64_t Node::get_term(uint64_t log_index) {
+    return _impl->get_term(log_index);
+}
+
 butil::Status Node::vote(int election_timeout) {
     return _impl->vote(election_timeout);
 }
