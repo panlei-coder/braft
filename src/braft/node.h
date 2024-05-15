@@ -151,7 +151,7 @@ public:
     uint64_t get_last_log_index(bool is_flush);
 
     // trigger snapshot
-    void snapshot(Closure* done, int64_t self_snapshot_index);
+    void snapshot(Closure* done, int64_t self_snapshot_index = 0);
 
     // trigger vote
     butil::Status vote(int election_timeout);
