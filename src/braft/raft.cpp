@@ -214,6 +214,10 @@ uint64_t Node::get_term(uint64_t log_index) {
     return _impl->get_term(log_index);
 }
 
+uint64_t Node::get_last_log_index(bool is_flush) {
+    return _impl->get_last_log_index(is_flush);
+}
+
 butil::Status Node::vote(int election_timeout) {
     return _impl->vote(election_timeout);
 }

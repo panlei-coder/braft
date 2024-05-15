@@ -984,6 +984,10 @@ uint64_t NodeImpl::get_term(uint64_t log_index) {
     return _log_manager->get_term(log_index);
 }
 
+uint64_t NodeImpl::get_last_log_index(bool is_flush) {
+    return _log_manager->last_log_index(is_flush);
+}
+
 void NodeImpl::do_snapshot(Closure* done, int64_t self_snapshot_index) {
     LOG(INFO) << "node " << _group_id << ":" << _server_id 
               << " starts to do snapshot";
